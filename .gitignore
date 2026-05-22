@@ -1,4 +1,6 @@
+# ──────────────────────────────────────────────
 # Python
+# ──────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
@@ -6,53 +8,92 @@ __pycache__/
 *.pyd
 .Python
 
-# Virtual environments
+# ──────────────────────────────────────────────
+# Virtual Environments
+# ──────────────────────────────────────────────
 venv/
 env/
 .env
 .venv
 ENV/
 
+# ──────────────────────────────────────────────
 # Jupyter Notebooks
+# ──────────────────────────────────────────────
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Model checkpoints & large files (use Git LFS if needed)
+# ──────────────────────────────────────────────
+# Model Weights & Checkpoints (too large for GitHub)
+# Store these using Git LFS or Google Drive
+# ──────────────────────────────────────────────
 *.pth
 *.pt
 *.h5
 *.pkl
 *.ckpt
+*.bin
+*.safetensors
 
-# Distribution / packaging
+# Keep log files from checkpoints (training history is useful)
+!checkpoints/*.log
+
+# ──────────────────────────────────────────────
+# Dataset (PlantVillage or custom — never commit raw data)
+# ──────────────────────────────────────────────
+data/
+datasets/
+dataset/
+PlantVillage/
+*.csv
+*.json
+!requirements*.txt
+
+# ──────────────────────────────────────────────
+# Outputs (keep visualizations — they're small & useful)
+# ──────────────────────────────────────────────
+# outputs/ is NOT ignored — confusion matrix, F1 plots are valuable
+
+# ──────────────────────────────────────────────
+# SimCLR / Pretraining artifacts
+# ──────────────────────────────────────────────
+pretrain_cache/
+ssl_cache/
+augmentation_cache/
+
+# ──────────────────────────────────────────────
+# Streamlit
+# ──────────────────────────────────────────────
+.streamlit/secrets.toml
+uploads/
+temp_uploads/
+
+# ──────────────────────────────────────────────
+# Distribution / Packaging
+# ──────────────────────────────────────────────
 dist/
 build/
 *.egg-info/
 *.egg
 
+# ──────────────────────────────────────────────
 # Testing
+# ──────────────────────────────────────────────
 .pytest_cache/
 htmlcov/
 .coverage
 *.cover
 
+# ──────────────────────────────────────────────
 # IDEs
+# ──────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
 
+# ──────────────────────────────────────────────
 # OS
+# ──────────────────────────────────────────────
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-logs/
-
-# Data (usually too large for git)
-data/
-datasets/
-
-# Outputs (optional — remove if you want to track these)
-# outputs/
